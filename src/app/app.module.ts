@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { TimelineGridComponent } from './timeline-grid/timeline-grid.component';
 import { PrimeNgModule } from 'src/PrimeNg/prime-ng/prime-ng.module';
 import { TableModule } from 'primeng/table';
+import { TimelineFormComponent } from './timeline-form/timeline-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TimelineGridComponent
+    TimelineGridComponent,
+    TimelineFormComponent
   ],
   imports: [
     BrowserModule,
