@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TimelineGridComponent } from './timeline-grid/timeline-grid.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
