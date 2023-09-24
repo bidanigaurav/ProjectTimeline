@@ -1,1 +1,50 @@
-<p>timeline-form works!</p>
+<div>
+  <div class="grid">
+    <div class="col-11 mx-auto">
+      <p-card header="Project form">
+        <div class="text-center" *ngIf="isLoading">
+          <p-progressSpinner></p-progressSpinner>
+        </div>
+        <div *ngIf="!isLoading">
+          <form [formGroup]="projectForm">
+            <div class="mb-2">
+              <button pButton pRipple label="Submit" class="p-button-raised p-button-sm" (click)="onSubmit()" [disabled]="!projectForm.valid"></button>
+            </div>
+            <div class="grid">
+              <div class="col-6">
+                <div class="flex flex-column gap-2">
+                  <label htmlFor="projectName">Project Name</label>
+                  <input pInputText id="projectName" formControlName="ProjectNameFC" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="flex flex-column gap-2">
+                  <label htmlFor="status">Status</label>
+                  <p-dropdown id="status" formControlName="StatusFC" [options]="statusOption"></p-dropdown>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="flex flex-column gap-2">
+                  <label htmlFor="projectName">Sponsor</label>
+                  <input pInputText id="sponsor" formControlName="SponsorFC" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="flex flex-column gap-2">
+                  <label for="start">Project Start</label>
+                  <p-calendar id="start" view="month" dateFormat="mm/yy" formControlName="StartFC" [readonlyInput]="true"></p-calendar>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="flex flex-column gap-2">
+                  <label for="end">Project End</label>
+                  <p-calendar id="end" view="month" dateFormat="mm/yy" formControlName="EndFC" [readonlyInput]="true"></p-calendar>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</div>

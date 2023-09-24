@@ -6,23 +6,29 @@
 
 <div *ngIf="!isLoading">
   <div class="grid">
-    <div class="col-10 mx-auto">
-      <p-table [columns]="displayedColumns" [value]="data">
-        <ng-template pTemplate="header" let-columns>
+    <div class="col-11 mx-auto">
+      <p-card>
+        <div class="mb-2">
+          <button pButton pRipple label="Add New Project" class="p-button-raised p-button-sm" (click)="addNewProject()"></button>
+          <button pButton pRipple label="Edit Project" class="ml-2 p-button-raised p-button-sm" (click)="editProject()"></button>
+        </div>
+        <p-table [columns]="displayedColumns" [value]="data">
+          <ng-template pTemplate="header" let-columns>
             <tr>
-                <th *ngFor="let col of columns">
-                  {{ col }}
-                </th>
+              <th *ngFor="let col of columns">
+                {{ col }}
+              </th>
             </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          </ng-template>
+          <ng-template pTemplate="body" let-rowData let-columns="columns">
             <tr>
-                <td *ngFor="let col of columns">
-                  {{ rowData[col] }}
-                </td>
+              <td *ngFor="let col of columns">
+                {{ rowData[col] }}
+              </td>
             </tr>
-        </ng-template>
-      </p-table>
+          </ng-template>
+        </p-table>
+      </p-card>
     </div>
   </div>
 </div>
