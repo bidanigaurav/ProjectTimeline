@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TimelineGridComponent } from './timeline-grid/timeline-grid.component';
 import { PrimeNgModule } from 'src/PrimeNg/prime-ng/prime-ng.module';
-import { TableModule } from 'primeng/table';
 import { TimelineFormComponent } from './timeline-form/timeline-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -17,9 +18,11 @@ import { TimelineFormComponent } from './timeline-form/timeline-form.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     PrimeNgModule,
-    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

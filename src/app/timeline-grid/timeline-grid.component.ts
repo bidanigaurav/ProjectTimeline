@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-timeline-grid',
@@ -11,7 +12,9 @@ export class TimelineGridComponent implements OnInit{
   isLoading: boolean = true;
   displayedColumns = ['Project Name', 'Status', 'Sponsor', 'Start', 'End'];
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.data = [
@@ -27,5 +30,13 @@ export class TimelineGridComponent implements OnInit{
 
   activate() {
     this.isLoading = false;
+  }
+
+  addNewProject() {
+    this.router.navigate(['/new-project']);
+  }
+  
+  editProject() {
+    this.router.navigate(['/new-project'], {queryParams: {id:'001'}});
   }
 }
